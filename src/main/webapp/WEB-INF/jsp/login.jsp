@@ -10,31 +10,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="http://cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../../css/login/default.css">
-	<link rel="stylesheet" type="text/css" href="../../css/login/styles.css">
-	<style type="text/css">
-		.htmleaf-header{
-			padding: 1em 190px 1em;
-			letter-spacing: -1px;
-			text-align: center;
-		}
-		.htmleaf-header h1 {
-			color: #fff;
-			font-weight: 600;
-			font-size: 2em;
-			line-height: 1;
-			margin-bottom: 0;
-			font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
-		}
-		.htmleaf-header h1 span {
-			font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
-			display: block;
-			font-size: 60%;
-			font-weight: 400;
-			padding: 0.8em 0 0.5em 0;
-			color: #fff;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/login/default.css">
+	<link rel="stylesheet" type="text/css" href="css/login/styles.css">
 </head>
 
 <body>
@@ -45,34 +22,38 @@
 	  <div class='login_title'>
 	    <span>Login to your account</span>
 	  </div>
-	  <div class='login_fields'>
-	    <div class='login_fields__user'>
-	      <div class='icon'>
-	        <img src='../../img/login/user_icon_copy.png'>
-	      </div>
-	      <input placeholder='username' type='text'>
-	        <div class='validation'>
-	          <img src='../../img/login/tick.png'>
-	        </div>
-	      </input>
-	    </div>
-	    <div class='login_fields__password'>
-	      <div class='icon'>
-	        <img src='../../img/login/lock_icon_copy.png'>
-	      </div>
-	      <input placeholder='password' type='password'>
-	      <div class='validation'>
-	        <img src='../../img/login/tick.png'>
-	      </div>
-	    </div>
-	    <div class='login_fields__submit'>
-	      <input type='submit' value='Log In'>
-	      <div class='forgot'>
-	        <a href='#'>Forgotten password?</a>
-	      </div>
-	    </div>
-	  </div>
-	  <div class='success'>
+<%--		form表单，提交用户名密码--%>
+		<form action="login" method="post">
+		  <div class='login_fields'>
+			<div class='login_fields__user'>
+			  <div class='icon'>
+				<img src='../../img/login/user_icon_copy.png'>
+			  </div>
+			  <input placeholder='username' type='text' name="username">
+				<div class='validation'>
+				  <img src='../../img/login/tick.png'>
+				</div>
+			  </input>
+			</div>
+			<div class='login_fields__password'>
+			  <div class='icon'>
+				<img src='../../img/login/lock_icon_copy.png'>
+			  </div>
+			  <input placeholder='password' type='password' name="password">
+			  <div class='validation'>
+				<img src='../../img/login/tick.png'>
+			  </div>
+			</div>
+			<div class='login_fields__submit'>
+			  <input type='submit' value='Log In'>
+			  <div class='forgot'>
+				<a href='#'>Forgotten password?</a>
+			  </div>
+			</div>
+		  </div>
+		</form>
+
+		<div class='success'>
 	    <h2>Authentication Success</h2>
 	    <p>Welcome back</p>
 	  </div>

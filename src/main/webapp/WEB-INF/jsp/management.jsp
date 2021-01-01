@@ -1,7 +1,11 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <c:url var="base" value="/"/>
+  <base href="${base}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -71,7 +75,10 @@
     <!-- <input type="text" id="lin" placeholder="请输入需要搜索的内容"> -->
     <div class="tab">
       <input type="text" class="form-control names" id="lin" placeholder="请输入需要搜索的内容">
-      <a href="news-editor.html"><button type="button" class="btn btn-primary">发布文章</button></a>
+      <div>
+        <a href="index"><button type="button" class="btn btn-outline-primary">首页</button></a>
+        <a href="newseditor"><button type="button" class="btn btn-primary">发布文章</button></a>
+      </div>
     </div>
     <table class="table table-striped table-bordered" id="table-1">
       <thead class="thead-dark">
@@ -83,34 +90,24 @@
 
       <tbody>
 
-        <tr>
-          <td>【转载】中共中央政治局召开会议 习近平主持</td>
-          <td><button type="button" class="btn btn-primary">修改</button> <button type="button" class="btn btn-danger">删除</button></td>
-        </tr>
-        <tr>
-          <td>【转载】中共中央政治局召开会议 习近平主持</td>
-          <td><button type="button" class="btn btn-primary">修改</button> <button type="button" class="btn btn-danger">删除</button></td>
-        </tr>
-        <tr>
-          <td>【转载】中共中央政治局召开会议 习近平主持</td>
-          <td><button type="button" class="btn btn-primary">修改</button> <button type="button" class="btn btn-danger">删除</button></td>
-        </tr>
-        <tr>
-          <td>【转载】中共中央政治局召开会议 习近平主持</td>
-          <td><button type="button" class="btn btn-primary">修改</button> <button type="button" class="btn btn-danger">删除</button></td>
-        </tr>
-        <tr>
-          <td>【转载】中共中央政治局召开会议 习近平主持</td>
-          <td><button type="button" class="btn btn-primary">修改</button> <button type="button" class="btn btn-danger">删除</button></td>
-        </tr>
-        <tr>
-          <td>【转载】中共中央政治局召开会议 习近平主持</td>
-          <td><button type="button" class="btn btn-primary">修改</button> <button type="button" class="btn btn-danger">删除</button></td>
-        </tr>
-        <tr>
-          <td>【转载】中共中央政治局召开会议 习近平主持</td>
-          <td><button type="button" class="btn btn-primary">修改</button> <button type="button" class="btn btn-danger">删除</button></td>
-        </tr>
+        <c:forEach items="${news }" var="n">
+          <tr>
+
+            <td>
+              <a href="getnews?title=${n.title }">
+                ${n.title }
+              </a>
+            </td>
+            <td>
+              <a href="update?title=${n.title }">
+                <button type="button" class="btn btn-primary">修改</button>
+              </a>
+              <a href="deletenews?title=${n.title }">
+                <button type="button" class="btn btn-danger">删除</button>
+              </a>
+            </td>
+          </tr>
+        </c:forEach>
       </tbody>
     </table>
   </div>
@@ -131,7 +128,7 @@
 
   <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
   <script src="https://www.jq22.com/jquery/bootstrap-4.2.1.js"></script>
-  <script src="../js/news/lin_search.js"></script>
+  <script src="../../js/news/lin_search.js"></script>
   <script>
     //  表1
 

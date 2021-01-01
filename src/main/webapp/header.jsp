@@ -1,5 +1,56 @@
 <%@ page pageEncoding="UTF-8" %>
-<div class="header">
+<style>
+
+    .block {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0));
+    }
+
+    .block .nav_main {
+        font-size: 18px;
+        display: flex;
+    }
+
+    .fab{
+        position: relative;
+        height: 50px;
+        padding-top: 15px;
+    }
+
+
+    .fab .item{
+        position: absolute;
+        top: 55px;
+        right: -300px;
+        padding: 40px;
+        display: flex;
+        border-top: 2px solid #94070a;
+        width: 900px;
+        background: #fff url(img/child.png) center bottom no-repeat;
+    }
+
+    .fab .item .l{
+        display: flex;
+        width: 45%;
+    }
+
+    .fab .item .r{
+        width: 55%;
+    }
+
+    .manger{
+        position: relative;
+        vertical-align: top;
+        margin: 0 25px;
+        font-size: 18px;
+        color: white;
+    }
+</style>
+
     <div class="block">
         <div class="logo">
             <!--                    <img src="resources/logo.jpg" alt="">-->
@@ -10,7 +61,7 @@
                 <a href="">专业介绍 <p>占位标签</p></a>
                 <div class="item">
                     <div class="l">
-                        <img src="../img/logo.jpg" alt="">
+                        <img src="img/logo.jpg" alt="">
                         <p>
                             生活总是困苦的<br>
                             从现在开始<br>
@@ -28,7 +79,7 @@
                 <a href="">实验室 <p>占位标签</p></a>
                 <div class="item">
                     <div class="l">
-                        <img src="../img/logo.jpg" alt="">
+                        <img src="img/logo.jpg" alt="">
                         <p>
                             生活是艰难的<br>
                             所以我们要坚强<br>
@@ -47,7 +98,7 @@
                 <a href="">教师队伍 <p>占位标签</p></a>
                 <div class="item">
                     <div class="l">
-                        <img src="../img/logo.jpg" alt="">
+                        <img src="img/logo.jpg" alt="">
                         <p>
                             生活是艰难的<br>
                             所以我们要坚强<br>
@@ -66,7 +117,7 @@
                 <a href="">就业指南 <p>占位标签</p></a>
                 <div class="item">
                     <div class="l">
-                        <img src="../img/logo.jpg" alt="">
+                        <img src="img/logo.jpg" alt="">
                         <p>
                             生活是艰难的<br>
                             所以我们要坚强<br>
@@ -81,7 +132,6 @@
             </div>
         </div>
         <div class="manger">
-            <a href="">管理员 <p>占位标签</p></a>
+            <a href="login">管理员 <p>占位标签</p></a>
         </div>
-    </div>
 </div>

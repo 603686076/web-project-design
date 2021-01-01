@@ -238,6 +238,7 @@ a:hover{
 
 .notice li{
     /*margin: 50px 0 0px;*/
+    width: 100%;
     max-height: 75px;
 }
 
@@ -315,8 +316,4 @@ a:hover{
     margin-left: 32px;
     line-height: 1.2;
     font-family: 'Arial';
-}
-
-.test{
-    color: #f44336;
 }

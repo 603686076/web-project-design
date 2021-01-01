@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><!DOCTYPE html>
 <html>
 	<head>
+		<c:url var="base" value="/"/>
+		<base href="${base}">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
 		<title>新闻编辑</title>
 	
-		<link href="../css/news/froalaeditor.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/news/froalaeditor.min.css" rel="stylesheet" type="text/css" />
 		<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="../js/news/froala_editor.pkgd.min.js"></script>
+		<script type="text/javascript" src="../../js/news/froala_editor.pkgd.min.js"></script>
 		<style>
 			html { height:100%; }
 			body { padding: 0; margin: 0; height:100%; }
@@ -52,13 +55,17 @@
 
 	<body>
 		<section class="article_editor">
+
+
+			<form action="addnews" method="post">
+
 			<div class="article_editor_toolbar"></div>
 			<div class="article_editor_content">
 				<div class="wrapper">
 					<div class="article_editor_page">
-						<div class="article_editor_title"><input type="text" placeholder="请在这里输入标题" name="title" max-length="64"></div>
+						<div class="article_editor_title"><input type="text" placeholder="请在这里输入标题" name="newtitle" max-length="64"></div>
 						<div class="article_editor_info">
-							<select name="" id=""><option value="">新闻中心</option><option value="">行业资讯</option></select>
+							<select name="type" id=""><option value="">新闻</option><option value="">公告</option></select>
 							<label>
 								<span>发布于</span>
 								<input type="text" class="l" placeholder="2020-01-31 19:47:09">
@@ -68,13 +75,13 @@
 								<input type="text" class="s" placeholder="0">
 							</label>
 						</div>
-						<div class="article_editor_textarea"><textarea id="editor"></textarea></div>
+						<div class="article_editor_textarea"><textarea id="editor" name="newtext"></textarea></div>
 						<div class="article_editor_options">
 							<div class="article_editor_info2">
 								<div class="tit">封面摘要</div>
 								<div class="con">
 									<div class="fl"><div class="thumb"></div></div>
-									<div class="fr"><textarea placeholder="选填，摘要会在文章列表页显露，帮助读者快速了解内容，如不填写则默认抓取正文前54字"></textarea></div>
+									<div class="fr"><textarea placeholder="选填，摘要会在文章列表页显露，帮助读者快速了解内容，如不填写则默认抓取正文前54字" name="newsummary"></textarea></div>
 								</div>
 							</div>
 						</div>
@@ -87,6 +94,9 @@
 					<div class="fr"><button type="submit">保存发布</button><button>取消发布</button></div>
 				</div>
 			</div>
+
+
+			</form>
 		</section>
 		<script>
 				$(window).scroll(setEditFixed);
