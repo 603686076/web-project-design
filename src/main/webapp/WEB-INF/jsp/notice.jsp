@@ -1,10 +1,10 @@
 <%@ page pageEncoding="UTF-8" %>
 <ul class="notice">
-    <c:forEach items="${news }" var="n">
+    <c:forEach items="${notice }" var="n">
         <li>
             <div class="shadow">
                 <span class="li_bg"></span>
-                <a href="getnews?title=${n.title }">
+                <a href="getnotice?title=${n.title }">
                     <h3 class="fpx15">${n.title } </h3>
 <%--                    <p>${n.summary }</p>--%>
                     <div class="date">

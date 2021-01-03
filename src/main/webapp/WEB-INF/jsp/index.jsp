@@ -36,16 +36,6 @@
     <script src="js/fullScreenScrolling/jquery.fullPage.min.js"></script>
     <script>
         $(document).ready(function () {
-                $(document).ready(function () {
-                $(".fab .item").hide();
-                $(".header .nav_main .fab").hover(
-                function () {
-                $(this).children(".item").fadeIn(200);
-            },function () {
-                $(this).children(".item").hide();
-            }
-                );
-            })
             // 全屏滚动
             $.fn.fullpage({
                 // slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90', '#ef820'],
@@ -68,7 +58,7 @@
                         $('.header').animate({
                             top: '0'
                         });
-                        $('.header .block .fab>a,.header .block .fab>p, .logo p,.manger a').css({color: 'black'})
+                        $('.header .block .fab>a,.header .block .fab>p, .logo p,.manger a, .no-item>a').css({color: 'black'})
                     }
                 },
                 onLeave: function(index, direction){
@@ -89,7 +79,7 @@
                         $('.header').animate({
                             top: '0'
                         });
-                        $('.header .block .fab>a,.header .block .fab>p,.logo p,.manger a').css({color: 'white'})
+                        $('.header .block .fab>a,.header .block .fab>p,.logo p,.manger a,.no-item>a').css({color: 'white'})
                     }
                 }
             });

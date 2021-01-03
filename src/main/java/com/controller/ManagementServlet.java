@@ -3,6 +3,7 @@ package com.controller;
 import com.entity.New;
 import com.entity.User;
 import com.service.NewsService;
+import com.service.NoticeService;
 import com.service.ServiceFactory;
 import com.util.DataSourceUtils;
 
@@ -19,16 +20,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/management")
+@WebServlet("/haslogin")
 public class ManagementServlet extends HttpServlet {
     // 基于ServiceFactory工厂，获取单例的NewsService组件
     private NewsService newsService = ServiceFactory.getNewsService();
+    private NoticeService noticeService = ServiceFactory.getNoticeService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 获取新闻标题
-        req.setAttribute("news", newsService.listNews2());
-        req.getRequestDispatcher("/WEB-INF/jsp/management.jsp")
-                .forward(req, resp);
+        User user = (User) req.getSession().getAttribute("user");
+        if (user != null) {
+            req.setAttribute("news", newsService.listNews2());
+            req.setAttribute("notice", noticeService.listNotice2());
+            req.getRequestDispatcher("/WEB-INF/jsp/management.jsp")
+                    .forward(req, resp);
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/login");
+        }
     }
 }

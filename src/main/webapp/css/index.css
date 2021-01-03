@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *{
     margin: 0;
     padding: 0;
@@ -165,7 +166,7 @@ a:hover{
 }
 
 .warp_mode {
-    background: url(../img/新闻公告背景.png) no-repeat center -25px #fefaf5;
+    background:#fefaf5 url(../img/news-notice.png) no-repeat center 50px ;
     height: 100vh;
 }
 
@@ -202,16 +203,17 @@ a:hover{
     display: flex;
     position: relative;
     top: 40px;
+    padding-top: 50px;
 }
 
 .news{
     /*text-align: center;*/
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
 
 .notice{
     text-align: center;
-    flex-basis: 40%;
+    flex-basis: 45%;
 }
 
 
@@ -237,7 +239,7 @@ a:hover{
 }
 
 .notice li{
-    /*margin: 50px 0 0px;*/
+    margin: 50px 0 0 50px;
     width: 100%;
     max-height: 75px;
 }
@@ -245,7 +247,7 @@ a:hover{
 .content li a{
     display: block;
     background-color: #fff;
-    padding: 20px 25px 45px;
+    padding: 0px 25px 45px;
     min-height: 140px;
 }
 
@@ -272,12 +274,13 @@ a:hover{
     line-height: 21px;
     max-height: 42px;
     overflow: hidden;
+    margin-top: 0;
     margin-bottom: 12px;
     letter-spacing: 0.2px;
 }
 
 .fpx15 {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .news p {

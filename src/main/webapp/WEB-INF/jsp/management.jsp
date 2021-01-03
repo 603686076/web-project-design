@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-4.2.1.css">
   <style>
     .content1 {
-      width: 1000px;
+      width: 600px;
       height: 600px;
 
       display: inline-block;
@@ -42,6 +42,13 @@
       box-sizing: border-box;
     }
 
+    #lin-2 {
+      margin: 20px 0;
+      height: 30px;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
     .names {
       width: 300px;
       margin-bottom: 30px;
@@ -64,53 +71,129 @@
       justify-content: space-between;
       align-items: center;
     }
+    .flex{
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hide{
+      display: inline-block;
+    }
+
+    span.label {
+      padding: 0 10px;
+      border-radius: 3px;
+      color: white;
+    }
+    /* 成功标签，绿色 */
+    span.label-success {
+      background: green;
+    }
+    /* 警告标签，橙色 */
+    span.label-warning {
+      background: orange;
+    }
   </style>
+
+
 </head>
 
 <body>
 
 
 
-  <div class="content1">
-    <!-- <input type="text" id="lin" placeholder="请输入需要搜索的内容"> -->
-    <div class="tab">
-      <input type="text" class="form-control names" id="lin" placeholder="请输入需要搜索的内容">
-      <div>
-        <a href="index"><button type="button" class="btn btn-outline-primary">首页</button></a>
-        <a href="newseditor"><button type="button" class="btn btn-primary">发布文章</button></a>
+<div class="new-notice">
+
+      <div class="content1">
+        <span ><span style="color: red">tips:</span> <span class="label label-warning">删除</span>的时候需要再点一下<span class="label label-warning">确认</span></span>
+        <!-- <input type="text" id="lin" placeholder="请输入需要搜索的内容"> -->
+      <div class="tab">
+
+        <input type="text" class="form-control names" id="lin" placeholder="请输入需要搜索的内容">
+        <h3>新闻</h3>
+<%--        <div>--%>
+<%--          <a href="index"><button type="button" class="btn btn-outline-primary">首页</button></a>--%>
+<%--          <a href="newseditor"><button type="button" class="btn btn-primary">发布文章</button></a>--%>
+<%--        </div>--%>
       </div>
-    </div>
-    <table class="table table-striped table-bordered" id="table-1">
-      <thead class="thead-dark">
+      <table class="table table-striped table-bordered" id="table-1">
+        <thead class="thead-dark">
         <tr>
           <th class="title">新闻标题</th>
           <th class="operation">操作</th>
         </tr>
-      </thead>
+        </thead>
 
-      <tbody>
+        <tbody>
 
         <c:forEach items="${news }" var="n">
           <tr>
-
             <td>
               <a href="getnews?title=${n.title }">
-                ${n.title }
+                  ${n.title }
               </a>
             </td>
             <td>
-              <a href="update?title=${n.title }">
+              <a href="updatenews?title=${n.title }">
                 <button type="button" class="btn btn-primary">修改</button>
               </a>
-              <a href="deletenews?title=${n.title }">
-                <button type="button" class="btn btn-danger">删除</button>
-              </a>
+<%--              <a class="btn btn-danger" href="" onclick="if(confirm('确定删除?')==false)return false;">删除</a>--%>
+              <button type="button" class="btn btn-danger" onclick="eg(this)">删除</button>
+              <form action="deletenews" method="post" class="hide">
+                <button type="submit" class="btn btn-danger" name="title" value="${n.title }">确认</button>
+              </form>
             </td>
           </tr>
         </c:forEach>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+        </div>
+      <div class="content1">
+        <div class="flex">
+          <a href="index"><button type="button" class="btn btn-outline-primary">首页</button></a>
+          <a href="editor"><button type="button" class="btn btn-primary">发布文章</button></a>
+        </div>
+  <!-- <input type="text" id="lin" placeholder="请输入需要搜索的内容"> -->
+      <div class="tab">
+        <input type="text" class="form-control names" id="lin-2" placeholder="请输入需要搜索的内容">
+        <h3>公告</h3>
+      <%--        <div>--%>
+<%--          <a href="index"><button type="button" class="btn btn-outline-primary">首页</button></a>--%>
+<%--          <a href="newseditor"><button type="button" class="btn btn-primary">发布文章</button></a>--%>
+<%--        </div>--%>
+      </div>
+      <table class="table table-striped table-bordered" id="table-2">
+        <thead class="thead-dark">
+        <tr>
+          <th class="title">公告标题</th>
+          <th class="operation">操作</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <c:forEach items="${notice }" var="n">
+          <tr>
+            <td>
+              <a href="getnotice?title=${n.title }">
+                  ${n.title }
+              </a>
+            </td>
+            <td>
+              <a href="updatenotice?title=${n.title }">
+                <button type="button" class="btn btn-primary">修改</button>
+              </a>
+              <button type="button" class="btn btn-danger" onclick="eg(this)">删除</button>
+              <form action="deletenotice" method="post" class="hide">
+                <button type="submit" class="btn btn-danger" name="title" value="${n.title }">确认</button>
+              </form>
+            </td>
+          </tr>
+        </c:forEach>
+        </tbody>
+      </table>
   </div>
+</div>
 
   <div class="content3">
     <input type="text" class="form-control names" id="searchInput" placeholder="请输入需要搜索的内容">
@@ -140,13 +223,13 @@
 
     })
 
+    $("#lin-2").on('keyup', function () {
+      var table2 = $("#table-2");
+      var input = $(this);
+      new Search(table2, input,)
 
-    // 表2
-    $('#select').on('change', function () {
-      var content = $('#select') // 下拉框
-      var table2 = $('#table-2')
-      new Search(table2, content, '#6332f6')
     })
+
 
     // 搜索ul li
     $('#searchInput').on('keyup', function () {
@@ -155,7 +238,14 @@
       new Search(content, input, '#6332f6')
     })
 
+   $(document).ready(function () {
+     $('.hide').hide();
+   })
 
+  function eg(button){
+      $(button).hide();
+      $(button).next().show();
+  }
 
   </script>
 

@@ -1,8 +1,9 @@
 package com.service.impl;
 
 import com.entity.New;
-import com.entity.User;
+import com.entity.Notice;
 import com.service.NewsService;
+import com.service.NoticeService;
 import com.util.DataSourceUtils;
 
 import java.sql.Connection;
@@ -13,69 +14,64 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class NewsServiceImpl implements NewsService {
+public class NoticeServiceImpl implements NoticeService {
     private static Logger logger = Logger.getLogger(NewsServiceImpl.class.getName());
 
-    //首页界面 获取新闻标题、摘要、发布时间 获取最新4条
     @Override
-    public List<New> listNews() {
-        List<New> news = new ArrayList<>();
-        String sql = "SELECT * FROM news limit 4";
+    public List<Notice> listNotice() {
+        List<Notice> notices = new ArrayList<>();
+        String sql = "SELECT * FROM notice limit 4";
         try(Connection conn = DataSourceUtils.getConnection();
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery()) {
             while (rs.next()) {
-                New aNew = new New(rs.getString("title"), rs.getString("summary"), rs.getTimestamp("releaseTime"));
-                news.add(aNew);
+                Notice notice = new Notice(rs.getString("title"), rs.getString("summary"), rs.getTimestamp("releaseTime"));
+                notices.add(notice);
             }
         } catch (SQLException e) {
             logger.warning(e.getMessage());
         }
-        return news;
+        return notices;
     }
 
-    //新闻管理界面 获取新闻标题  其实直接用listNews()这个方法也行，获取了title、summary、releaseTime，但在jsp只渲染获取了的title就行
     @Override
-    public List<New> listNews2() {
-        List<New> news = new ArrayList<>();
-        String sql = "select * from news";
+    public List<Notice> listNotice2() {
+        List<Notice> notices = new ArrayList<>();
+        String sql = "select * from notice";
         try(Connection conn = DataSourceUtils.getConnection();
             PreparedStatement st = conn.prepareStatement(sql);
             ResultSet rs = st.executeQuery()) {
             while (rs.next()) {
-                New aNew = new New(rs.getString("title"));
-                news.add(aNew);
+                Notice notice = new Notice(rs.getString("title"));
+                notices.add(notice);
             }
         } catch (SQLException e) {
             logger.warning(e.getMessage());
         }
-        return news;
+        return notices;
     }
 
-
-    //详情页面 新闻标题、正文、摘要
     @Override
-    public New getNew(String title) {
-        New anew = null;
-        String sql = "SELECT * FROM news WHERE title=?";
+    public Notice getNotice(String title) {
+        Notice notice = null;
+        String sql = "SELECT * FROM notice WHERE title=?";
         try(Connection conn = DataSourceUtils.getConnection();
             PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, title);//设置参数，需要两个try。try语句仅支持资源的声明，不支持直接执行方法。
             try(ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
-                    anew = new New(rs.getString("title"), rs.getString("text"), rs.getString("summary"));
+                    notice = new Notice(rs.getString("title"), rs.getString("text"), rs.getString("summary"));
                 }
             }
         } catch (SQLException e) {
             logger.warning(e.getMessage());
         }
-        return anew;
+        return notice;
     }
 
-    //发布新闻 新闻标题、摘要、正文
     @Override
-    public void addNew(String newTitle, String newSummary, String newText) {
-        String sql = "INSERT INTO news(title, summary, text) VALUES(?, ?, ?)";
+    public void addNotice(String newTitle, String newSummary, String newText) {
+        String sql = "INSERT INTO notice(title, summary, text) VALUES(?, ?, ?)";
         try(Connection conn = DataSourceUtils.getConnection();
             PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, newTitle);
@@ -87,10 +83,9 @@ public class NewsServiceImpl implements NewsService {
         }
     }
 
-    //删除新闻
     @Override
-    public void deleteNew(String title) {
-        String sql = "DELETE FROM news WHERE title=?";
+    public void deleteNotice(String title) {
+        String sql = "DELETE FROM notice WHERE title=?";
         try(Connection conn = DataSourceUtils.getConnection();
             PreparedStatement st = conn.prepareStatement(sql)){
             st.setString(1, title);
@@ -101,8 +96,8 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public void updateNew(String title, String newTitle, String newSummary, String newText) {
-        String sql = "update news set title = ?, summary = ?, text = ?  where title=?";
+    public void updateNotice(String title, String newTitle, String newSummary, String newText) {
+        String sql = "update notice set title = ?, summary = ?, text = ?  where title=?";
         try(Connection conn = DataSourceUtils.getConnection();
             PreparedStatement st = conn.prepareStatement(sql)) {
             st.setString(1, newTitle);
@@ -114,5 +109,4 @@ public class NewsServiceImpl implements NewsService {
             logger.warning(e.getMessage());
         }
     }
-
 }

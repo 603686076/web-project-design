@@ -15,17 +15,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@WebServlet("/updatenews")
-public class UpdateNewsServlet extends HttpServlet {
-    // 基于ServiceFactory工厂，获取单例的NewsService组件
-    private NewsService newsService = ServiceFactory.getNewsService();
+@WebServlet("/updatenotice")
+public class UpdateNoticeServlet extends HttpServlet {
+
+    private NoticeService noticeService = ServiceFactory.getNoticeService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String title = req.getParameter("title");
         req.getSession().setAttribute("title", title);
-        req.setAttribute("anew", newsService.getNew(title));
-        req.getRequestDispatcher("/WEB-INF/jsp/update-news-editor.jsp")
+        req.setAttribute("notice", noticeService.getNotice(title));
+        req.getRequestDispatcher("/WEB-INF/jsp/update-notice-editor.jsp")
                 .forward(req, resp);
     }
+
 }

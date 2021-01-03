@@ -1,7 +1,6 @@
 package com.service;
 
 import com.entity.New;
-import com.entity.User;
 
 import java.util.Date;
 import java.util.List;
@@ -25,12 +24,12 @@ public interface NewsService {
     public New getNew(String title);
     /**
      * 发布新闻
-     * @param title
-     * @param summary
-     * @param text
+     * @param newTitle
+     * @param newSummary
+     * @param newText
 //     * @param releaseTime
      */
-    public void addNew(String title, String summary, String text);
+    public void addNew(String newTitle, String newSummary, String newText);
 
     /**
      * 删除新闻
@@ -42,4 +41,5 @@ public interface NewsService {
      * @param title
      */
     public void updateNew(String title, String newTitle, String newSummary, String newText);
+
 }

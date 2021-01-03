@@ -58,6 +58,11 @@
         </div>
         <div class="nav_main">
             <div class="fab">
+                <div class="no-item">
+                    <a href="index">首页 <p>占位标签</p></a>
+                </div>
+            </div>
+            <div class="fab">
                 <a href="">专业介绍 <p>占位标签</p></a>
                 <div class="item">
                     <div class="l">
@@ -107,31 +112,29 @@
                         </p>
                     </div>
                     <div class="r">
-                        <a href="">教授</a>
-                        <a href="">副教授</a>
-                        <a href="">讲师</a>
+                        <a href="${pageContext.request.contextPath}/teachers.jsp" >教授</a>
+                        <a href="${pageContext.request.contextPath}/teachers.jsp">副教授</a>
+                        <a href="${pageContext.request.contextPath}/teachers.jsp">讲师</a>
                     </div>
                 </div>
             </div>
             <div class="fab">
-                <a href="">就业指南 <p>占位标签</p></a>
-                <div class="item">
-                    <div class="l">
-                        <img src="img/logo.jpg" alt="">
-                        <p>
-                            生活是艰难的<br>
-                            所以我们要坚强<br>
-                            学会微笑<br>
-                            会有出口的
-                        </p>
-                    </div>
-                    <div class="r">
-                        <a href="">就业指南</a>
-                    </div>
+                <div class="no-item">
+                    <a href="">就业指南 <p>占位标签</p></a>
                 </div>
             </div>
         </div>
         <div class="manger">
-            <a href="login">管理员 <p>占位标签</p></a>
+            <a href="management" title="进入新闻公告管理">管理员 <p>占位标签</p></a>
         </div>
 </div>
+<script>
+
+    $(".fab .item").hide();
+    $(".header .nav_main .fab").hover(
+        function () {
+            $(this).children(".item").fadeIn(0);
+        },function () {
+            $(this).children(".item").hide();
+        });
+</script>

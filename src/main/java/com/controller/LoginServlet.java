@@ -23,7 +23,10 @@ public class LoginServlet extends HttpServlet {
         String userName = req.getParameter("username");
         String password = req.getParameter("password");
         String url;
+
         if ("admin".equals(userName) && "123456".equals(password)) {
+            User u = new User("王小明");
+            req.getSession().setAttribute("user", u);
             url = "/management";
         } else {
             url = "/login";

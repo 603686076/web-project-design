@@ -15,22 +15,21 @@
     <link href="css/news/froalaeditor.min.css" rel="stylesheet" type="text/css" />
     <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="js/news/froala_editor.pkgd.min.js"></script>
-
 </head>
 
 <body>
 <section class="article_editor">
 
 
-    <form  action="saveupdate" method="post">
+    <form action="saveupdate" method="post">
 
         <div class="article_editor_toolbar"></div>
         <div class="article_editor_content">
             <div class="wrapper">
                 <div class="article_editor_page">
-                    <div class="article_editor_title"><input type="text" name="newtitle" value="${anew.title}" max-length="64"></div>
+                    <div class="article_editor_title"><input type="text" name="newtitle" value="${notice.title}" max-length="64"></div>
                     <div class="article_editor_info">
-                        <select name="type" id=""><option value="news">新闻</option></select>
+                        <select name="type" id=""><option value="notice">公告</option></select>
                         <label>
                             <span>发布于</span>
                             <c:set var="now" value="<%=new java.util.Date()%>" />
@@ -41,13 +40,13 @@
                             <input type="text" class="s" placeholder="0">
                         </label>
                     </div>
-                    <div class="article_editor_textarea"><textarea id="editor" name="newtext">${anew.text}</textarea></div>
+                    <div class="article_editor_textarea"><textarea id="editor" name="newtext">${notice.text}</textarea></div>
                     <div class="article_editor_options">
                         <div class="article_editor_info2">
                             <div class="tit">封面摘要</div>
                             <div class="con">
                                 <div class="fl"><div class="thumb"></div></div>
-                                <div class="fr"><textarea  name="newsummary">${anew.summary}</textarea></div>
+                                <div class="fr"><textarea  name="newsummary">${notice.summary}</textarea></div>
                             </div>
                         </div>
                     </div>
