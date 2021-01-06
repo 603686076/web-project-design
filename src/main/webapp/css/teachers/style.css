@@ -22,6 +22,7 @@ img {
 }
 
 body {
+    padding-left: 400px;
     background: #fff;
     color: #666;
     font: 12px/150% Arial,Verdana, "microsoft yahei";
@@ -69,9 +70,9 @@ li {
 
 /* 必要布局样式css */
 .ato-content {
-    width: 1180px;
+    width: 900px;
     margin: 0 auto;
-    padding-top: 125px;
+    padding-top: 400px;
 }
 
 .ato-list ul {
@@ -168,6 +169,7 @@ li {
 
 .ato-list-fl {
     float: left;
+    margin-left: 390px;
 }
 
 .ato-title {
@@ -196,7 +198,7 @@ li {
     width: 50px;
     height: 50px;
     position: relative;
-    margin-top: 54px;
+    margin-top: -30px;
     margin-right: 10px;
     float: left;
     border: 1px solid #ABABAB;

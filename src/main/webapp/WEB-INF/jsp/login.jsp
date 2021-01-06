@@ -16,7 +16,7 @@
 
 <body>
 	<header class="htmleaf-header">
-		<h1>管理员登录 <span>测试账号密码：admin 123456</span></h1>
+		<h1>管理员登录 <span>测试账号密码：admin 1</span></h1>
 	</header>
 	<div class='login'>
 	  <div class='login_title'>
@@ -27,27 +27,27 @@
 		  <div class='login_fields'>
 			<div class='login_fields__user'>
 			  <div class='icon'>
-				<img src='../../img/login/user_icon_copy.png'>
+				<img src='img/login/user_icon_copy.png'>
 			  </div>
 			  <input placeholder='username' type='text' name="username">
 				<div class='validation'>
-				  <img src='../../img/login/tick.png'>
+				  <img src='img/login/tick.png'>
 				</div>
 			  </input>
 			</div>
 			<div class='login_fields__password'>
 			  <div class='icon'>
-				<img src='../../img/login/lock_icon_copy.png'>
+				<img src='img/login/lock_icon_copy.png'>
 			  </div>
 			  <input placeholder='password' type='password' name="password">
 			  <div class='validation'>
-				<img src='../../img/login/tick.png'>
+				<img src='img/login/tick.png'>
 			  </div>
 			</div>
 			<div class='login_fields__submit'>
 			  <input type='submit' value='Log In'>
 			  <div class='forgot'>
-				<a href='#'>Forgotten password?</a>
+				<a href='login'>Forgotten password?</a>
 			  </div>
 			</div>
 		  </div>
@@ -58,15 +58,15 @@
 	    <p>Welcome back</p>
 	  </div>
 	  <div class='disclaimer'>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper laoreet placerat. Nullam semper auctor justo, rutrum posuere odio vulputate nec.</p>
+	    <p>可以登录账号测试增删改查功能， 编辑器是基于插件实现，有些功能不可用，本地上传的图片不好使，想要提交带有图片的富文本可以从别的网页上将图片同文本一起复制粘贴下来（这样图片是链接的形式）/p>
 	  </div>
 	</div>
 	<div class='authent'>
-	  <img src='../../img/login/puff.svg'>
+	  <img src='img/login/puff.svg'>
 	  <p>Authenticating...</p>
 	</div>
-	<script src='../../js/login/stopExecutionOnTimeout.js?t=1'></script>
-	<script src="../../js/login/jquery-2.1.1.min.js"></script>
+	<script src='js/login/stopExecutionOnTimeout.js?t=1'></script>
+	<script src="js/login/jquery-2.1.1.min.js"></script>
 	<script src="http://cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js"></script>
 	<script>
 	$('input[type="submit"]').click(function () {

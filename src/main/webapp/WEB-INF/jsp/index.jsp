@@ -29,6 +29,17 @@
             height: 100%;
             position: relative;
         }
+        footer {
+              background-color: #94070a;
+              text-align: center;
+              font-size: 12px;
+              color: white;
+              padding: 5px;
+              margin: 30px auto  0;
+              width: 1400px;
+          }
+
+
     </style>
     <!--    引入全屏滚动js-->
     <script src="js/fullScreenScrolling/jquery-1.8.3.min.js"></script>
@@ -38,6 +49,7 @@
         $(document).ready(function () {
             // 全屏滚动
             $.fn.fullpage({
+                resize: false,
                 // slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90', '#ef820'],
                 anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
                 afterLoad: function(anchorLink, index){
@@ -102,16 +114,16 @@
             <!-- 轮播（Carousel）项目 -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="../../img/logo.jpg" style="width: 100%; height: 100vh" alt="First slide">
-                    <div class="carousel-caption">这是一个测试标题 1</div>
+                    <img src="img/index/item01.gif" style="width: 100%; height: 100vh;object-fit: cover" alt="First slide">
+                    <div class="carousel-caption">下雪的东林总是那么美</div>
                 </div>
                 <div class="item">
-                    <img src="../../img/logo.jpg " style="width: 100%; height: 100vh" alt="Second slide">
-                    <div class="carousel-caption">这是一个测试标题 2</div>
+                    <img src="img/index/item02.gif" style="width: 100%; height: 100vh;object-fit: cover" alt="Second slide">
+                    <div class="carousel-caption">2021年即将来临，你准备好了吗？</div>
                 </div>
                 <div class="item">
-                    <img src="../../img/logo.jpg" style="width: 100%; height: 100vh" alt="Third slide">
-                    <div class="carousel-caption">这是一个测试标题 3</div>
+                    <img src="img/index/item03.gif" style="width: 100%; height: 100vh;object-fit: cover" alt="Third slide">
+                    <div class="carousel-caption">冬至了，你会和谁一起吃饺子呢？</div>
                 </div>
             </div>
             <!-- 轮播（Carousel）导航 -->
@@ -137,15 +149,18 @@
                     <span>一起来看</span>
                 </div>
                 <div class="content">
+                    <button style="flex-basis: 200%; padding:0;margin-top: -20px;margin-left: 0%; margin-bottom: -20px" type="button" class="btn btn-primary"> <a href="more" style="padding: 10px 600px">更多新闻与公告</a></button>
                     <%@include file="news.jsp"%>
                     <%@include file="notice.jsp"%>
                 </div>
             </div>
+            <%@include file="../../footer.jsp"%>
         </div>
     </div>
-    <div class="section section3">
-        <h1 style="position: relative;top: 100px">啥都没有</h1>
-    </div>
+<%--    <div class="section section3">--%>
+<%--        <h1 style="position: relative;top: 100px; color: blueviolet">啥都没有</h1>--%>
+<%--        <img src="img/logo.jpg" alt="" style="width: 100vw; height: 100vh">--%>
+<%--    </div>--%>
 </div>
 </body>
 </html>

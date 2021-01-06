@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>新闻管理</title>
+  <title>管理</title>
   <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-4.2.1.css">
   <style>
     .content1 {
@@ -106,6 +106,7 @@
 
       <div class="content1">
         <span ><span style="color: red">tips:</span> <span class="label label-warning">删除</span>的时候需要再点一下<span class="label label-warning">确认</span></span>
+        <span>可以新建一个文章测试增删改功能</span>
         <!-- <input type="text" id="lin" placeholder="请输入需要搜索的内容"> -->
       <div class="tab">
 
@@ -195,23 +196,23 @@
   </div>
 </div>
 
-  <div class="content3">
-    <input type="text" class="form-control names" id="searchInput" placeholder="请输入需要搜索的内容">
+<%--  <div class="content3">--%>
+<%--    <input type="text" class="form-control names" id="searchInput" placeholder="请输入需要搜索的内容">--%>
 
-    <ul class="ul">
-      <li>新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20
-        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20
-        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20
-        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20
-        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20
-        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20
-        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，<研究部署20></研究部署20></li>
-    </ul>
-  </div>
+<%--    <ul class="ul">--%>
+<%--      <li>新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20--%>
+<%--        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20--%>
+<%--        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20--%>
+<%--        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20--%>
+<%--        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20--%>
+<%--        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，研究部署20--%>
+<%--        新华社北京12月11日电  中共中央政治局12月11日召开会议，分析研究2021年经济工作；听取中央纪委国家监委工作汇报，<研究部署20></研究部署20></li>--%>
+<%--    </ul>--%>
+<%--  </div>--%>
 
   <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
   <script src="https://www.jq22.com/jquery/bootstrap-4.2.1.js"></script>
-  <script src="../../js/news/lin_search.js"></script>
+  <script src="js/editor/lin_search.js"></script>
   <script>
     //  表1
 

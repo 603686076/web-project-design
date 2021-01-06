@@ -21,10 +21,11 @@ public class Notice {
     }
 
     //详情界面
-    public Notice(String title, String text, String summary) {
+    public Notice(String title, String text, String summary, Date releaseTime) {
         this.title = title;
         this.text = text;
         this.summary = summary;
+        this.releaseTime = releaseTime;
     }
 
     public void setSummary(String summary) {

@@ -60,7 +60,7 @@ public class NoticeServiceImpl implements NoticeService {
             st.setString(1, title);//设置参数，需要两个try。try语句仅支持资源的声明，不支持直接执行方法。
             try(ResultSet rs = st.executeQuery()) {
                 while (rs.next()) {
-                    notice = new Notice(rs.getString("title"), rs.getString("text"), rs.getString("summary"));
+                    notice = new Notice(rs.getString("title"), rs.getString("text"), rs.getString("summary"), rs.getTimestamp("releaseTime"));
                 }
             }
         } catch (SQLException e) {

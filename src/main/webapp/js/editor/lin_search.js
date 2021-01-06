@@ -80,7 +80,7 @@ function Search(objId, inputId, color) {
       'color': "black",
       'font-weight': 'normal'
     });
-    var liContent = this.objId.find('li:contains("' + this.inpIdContents + '")'); // 获取所有含有搜索内容的td，类似于集合存储       
+    var liContent = this.objId.find('li:contains("' + this.inpIdContents + '")'); // 获取所有含有搜索内容的td，类似于集合存储
     console.log(liContent)
     if (this.inpIdContents != '') { // 如果搜索内容为空，就不用去更改样式，直接还原所有
 
@@ -91,7 +91,7 @@ function Search(objId, inputId, color) {
           display: "none"
         })
 
-       
+
         var tr = $(`
   
     <li id="content-null">暂无你搜索的内容</li>

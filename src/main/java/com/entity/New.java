@@ -21,10 +21,11 @@ public class New {
     }
 
     //详情界面
-    public New(String title, String text, String summary) {
+    public New(String title, String text, String summary, Date releaseTime) {
         this.title = title;
         this.text = text;
         this.summary = summary;
+        this.releaseTime = releaseTime;
     }
 
     public void setSummary(String summary) {

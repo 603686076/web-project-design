@@ -110,7 +110,7 @@ a:hover{
     display: flex;
     border-top: 2px solid #94070a;
     width: 900px;
-    background: #fff url(../img/child.png) center bottom no-repeat;
+    background: #fff  center bottom repeat;
 }
 
 .fab .item .l{
@@ -204,6 +204,7 @@ a:hover{
     position: relative;
     top: 40px;
     padding-top: 50px;
+    flex-wrap: wrap;
 }
 
 .news{

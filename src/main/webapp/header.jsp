@@ -30,7 +30,7 @@
         display: flex;
         border-top: 2px solid #94070a;
         width: 900px;
-        background: #fff url(img/child.png) center bottom no-repeat;
+        background: #fff center bottom repeat;
     }
 
     .fab .item .l{
@@ -63,64 +63,65 @@
                 </div>
             </div>
             <div class="fab">
-                <a href="">专业介绍 <p>占位标签</p></a>
+                <a href="${pageContext.request.contextPath}/professionalInformation1.jsp">专业介绍 <p>占位标签 占位标签</p></a>
                 <div class="item">
                     <div class="l">
-                        <img src="img/logo.jpg" alt="">
+                        <img src="img/school.png" alt="">
                         <p>
-                            生活总是困苦的<br>
-                            从现在开始<br>
-                            虽然晚了些<br>
-                            但总能赶上路的
+                            学参天地<br>
+                            <br>
+                            德和自然<br>
+
                         </p>
                     </div>
                     <div class="r">
-                        <a href="">专业简介</a>
-                        <a href="">方向简介</a>
+                        <a href="${pageContext.request.contextPath}/professionalInformation1.jsp">专业简介</a>
+                        <a href="${pageContext.request.contextPath}/professionalInformation2.jsp">方向简介</a>
+                        <a href="${pageContext.request.contextPath}/professionalInformation3.jsp">专业分流</a>
                     </div>
                 </div>
             </div>
             <div class="fab">
-                <a href="">实验室 <p>占位标签</p></a>
+                <a href="${pageContext.request.contextPath}/laboratorys923.jsp">实验室 <p>占位标签 占位标签</p></a>
                 <div class="item">
                     <div class="l">
-                        <img src="img/logo.jpg" alt="">
+                        <img src="img/school.png" alt="">
                         <p>
-                            生活是艰难的<br>
-                            所以我们要坚强<br>
-                            学会微笑<br>
-                            会有出口的
+                            饮水思源,<br>
+                            爱国荣校<br>
+                            博学、审问、慎思<br>
+                            明辨、笃行
                         </p>
                     </div>
                     <div class="r">
-                        <a href="">923创新实验室</a>
-                        <a href="">925移动开发实验室</a>
-                        <a href="">923实验室</a>
+                        <a href="${pageContext.request.contextPath}/laboratorys923.jsp">923创新实验室</a>
+                        <a href="${pageContext.request.contextPath}/laboratorys925.jsp">925移动开发实验室</a>
+                        <a href="${pageContext.request.contextPath}/laboratorys926.jsp">926机器人实验室</a>
                     </div>
                 </div>
             </div>
             <div class="fab">
-                <a href="">教师队伍 <p>占位标签</p></a>
+                <a href="${pageContext.request.contextPath}/teachers1.jsp">教师队伍 <p>占位标签 占位标签</p></a>
                 <div class="item">
                     <div class="l">
-                        <img src="img/logo.jpg" alt="">
+                        <img src="img/school.png" alt="">
                         <p>
-                            生活是艰难的<br>
-                            所以我们要坚强<br>
-                            学会微笑<br>
-                            会有出口的
+                            厚德载物<br>
+                            自强不息<br>
+                            博学而笃志<br>
+                            切问而近思
                         </p>
                     </div>
                     <div class="r">
-                        <a href="${pageContext.request.contextPath}/teachers.jsp" >教授</a>
-                        <a href="${pageContext.request.contextPath}/teachers.jsp">副教授</a>
-                        <a href="${pageContext.request.contextPath}/teachers.jsp">讲师</a>
+                        <a href="${pageContext.request.contextPath}/teachers1.jsp">教授</a>
+                        <a href="${pageContext.request.contextPath}/teachers2.jsp">副教授</a>
+                        <a href="${pageContext.request.contextPath}/teachers3.jsp">讲师</a>
                     </div>
                 </div>
             </div>
             <div class="fab">
                 <div class="no-item">
-                    <a href="">就业指南 <p>占位标签</p></a>
+                    <a href="${pageContext.request.contextPath}/employmentGuide.jsp">就业指南 <p>占位标签</p></a>
                 </div>
             </div>
         </div>
@@ -137,4 +138,62 @@
         },function () {
             $(this).children(".item").hide();
         });
+
+    function professor() {
+        $('.choose').addClass('active');
+        $('.choose > .icon').addClass('active');
+        $('.pay').removeClass('active');
+        $('.wrap').removeClass('active');
+        $('.ship').removeClass('active');
+        $('.pay > .icon').removeClass('active');
+        $('.wrap > .icon').removeClass('active');
+        $('.ship > .icon').removeClass('active');
+        $('#line').addClass('one');
+        $('#line').removeClass('two');
+        $('#line').removeClass('three');
+        $('#line').removeClass('four');
+        $('#first').addClass('active');
+        $('#second').removeClass('active');
+        $('#third').removeClass('active');
+        $('#fourth').removeClass('active');
+    }
+
+    function associateProfessor() {
+        $('.pay').addClass('active');
+        $('.pay > .icon').addClass('active');
+        $('.choose').removeClass('active');
+        $('.wrap').removeClass('active');
+        $('.ship').removeClass('active');
+        $('.choose > .icon').removeClass('active');
+        $('.wrap > .icon').removeClass('active');
+        $('.ship > .icon').removeClass('active');
+        $('#line').addClass('two');
+        $('#line').removeClass('one');
+        $('#line').removeClass('three');
+        $('#line').removeClass('four');
+        $('#first').removeClass('active');
+        $('#second').addClass('active');
+        $('#third').removeClass('active');
+        $('#fourth').removeClass('active');
+    }
+
+    function lecturer() {
+        $('.wrap').addClass('active');
+        $('.wrap > .icon').addClass('active');
+        $('.pay').removeClass('active');
+        $('.choose').removeClass('active');
+        $('.ship').removeClass('active');
+        $('.pay > .icon').removeClass('active');
+        $('.choose > .icon').removeClass('active');
+        $('.ship > .icon').removeClass('active');
+        $('#line').addClass('three');
+        $('#line').removeClass('two');
+        $('#line').removeClass('one');
+        $('#line').removeClass('four');
+        $('#first').removeClass('active');
+        $('#second').removeClass('active');
+        $('#third').addClass('active');
+        $('#fourth').removeClass('active');
+    }
+
 </script>
